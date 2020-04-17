@@ -1,4 +1,5 @@
-# Pull base image FROM ubuntu
+# Pull base image 
+FROM ubuntu
 RUN apt-get update
 RUN apt-get -y install wget
 #RUN add-apt-repository ppa:openjdk-r/ppa

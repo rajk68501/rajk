@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: docker
    tasks:
    - name: docker image create
      command: docker pull nginx

@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   tasks:
+   - name: docker image create
+     command: docker pull nginx
+   - name: create container
+     command: docker container run -it -d --name nginx -p 80:80 nginx

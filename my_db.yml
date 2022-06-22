@@ -1,16 +1,8 @@
 ---   
   - hosts: lamp
-    vars_files:
-     - vars/default.yml  
     tasks:   
      - name: install mysql     
        apt: name= "{{ item }}"  state=present
-       loop: [ 'mysql', 'php', 'apache2', 'php-mysql', 'MySQL-python', 'libapache2-mod-php' ]
+       loop: [ 'php', 'httpd', ]
      - name: start up the mysql service
-       shell: "service mysql start"
-     - name: start up the apache2 service
-       service: name=apache2 state=started enabled=true
-     - name: ensure mysql is enabled to run on startup
-       service: name=mysql state=started enabled=true
-
-     
+       command: "service httpd start"
